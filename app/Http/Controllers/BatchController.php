@@ -111,7 +111,7 @@ public function complete_batch($id){
 
     $rms = \DB::table('raw_materials')
         ->join('batch_details' , 'raw_materials.rm_code' ,'=', 'batch_details.rm_code' )
-        ->select('raw_materials.rate' , 'raw_materials.UOM',  'raw_materials.desc', 'batch_details.*' )
+        ->select('raw_materials.rate' , 'raw_materials.uom',  'raw_materials.type', 'batch_details.*' )
         ->where('batch_details.batch_id' , '=' , $batch->id)
         ->get();
 
@@ -130,7 +130,7 @@ public function complete_batch($id){
 
         $rms = \DB::table('raw_materials')
             ->join('batch_details' , 'raw_materials.rm_code' ,'=', 'batch_details.rm_code' )
-            ->select('raw_materials.rate' , 'raw_materials.UOM',  'raw_materials.desc', 'batch_details.*' )
+            ->select('raw_materials.rate' , 'raw_materials.uom',  'raw_materials.type', 'batch_details.*' )
             ->where('batch_details.batch_id' , '=' , $batch->id)
             ->get();
 
@@ -222,7 +222,7 @@ public function complete_batch($id){
 
             $rms = \DB::table('raw_materials')
                 ->join('batch_details', 'raw_materials.rm_code', '=', 'batch_details.rm_code')
-                ->select('raw_materials.rate', 'raw_materials.UOM', 'raw_materials.desc', 'batch_details.*')
+                ->select('raw_materials.rate', 'raw_materials.uom', 'raw_materials.type', 'batch_details.*')
                 ->where('batch_details.batch_id', '=', $batch->id)
                 ->get();
 

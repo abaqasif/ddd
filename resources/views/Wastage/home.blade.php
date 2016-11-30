@@ -30,7 +30,7 @@
                     <td>{{$wst->id}}</td>
                     <td>{{$wst->date}}</td>
                     <td>{{$wst->rm_code}}</td>
-                    <td>{{$wst->desc}}</td>
+                    <td>{{$wst->type}}</td>
                     <td>{{$wst->qty}}</td>
                     <td>{{$wst->cost}}</td>
                     <td>{{$wst->remarks}}</td>

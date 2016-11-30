@@ -30,7 +30,7 @@
         <table class="table table-condensed" style="width:90%">
             <tr>
                 <th>SERIAL NO</th>
-                <th>DESCRIPTION</th>
+                <th>TYPE</th>
                 <th>UNIT</th>
                 <th>QUANTITY</th>
 
@@ -40,9 +40,9 @@
                 <tr>
 
                     <td>{{$raw->rm_id}}</td>
-                    <td>{{$raw->desc}}</td>
+                    <td>{{$raw->type}}</td>
 
-                    <td>{{$raw->UOM}}</td>
+                    <td>{{$raw->uom}}</td>
                     {{--<td>{{$raw->rate}}</td>--}}
                     <td>{{$raw->qty}}</td>
 
@@ -54,7 +54,7 @@
             <table class="table table-condensed" style="width:90%">
                 <tr>
                     <th>SERIAL NO</th>
-                    <th>DESCRIPTION</th>
+                    <th>TYPE</th>
                     <th>UNIT</th>
 
                 </tr>
@@ -63,8 +63,8 @@
                     <tr>
 
                         <td>{{$rm->id}} </td>
-                        <td>{{$rm->desc}}</td>
-                        <td>{{$rm->UOM}}</td>
+                        <td>{{$rm->type}}</td>
+                        <td>{{$rm->uom}}</td>
 
                     </tr>
         @endforeach

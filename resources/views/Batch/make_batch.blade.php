@@ -33,7 +33,7 @@
             <table class="table table-condensed" style="width:90%">
                 <tr>
                     <th>SERIAL NO</th>
-                    <th>DESCRIPTION</th>
+                    <th>TYPE</th>
                     <th>QUANTITY</th>
                     <th>ADDITIONAL</th>
                     <th>UNIT</th>
@@ -47,13 +47,13 @@
                 @foreach($rms as $rm)
                     <tr>
                         <td>{{$rm->rm_code}}</td>
-                        <td>{{$rm->desc}}</td>
+                        <td>{{$rm->type}}</td>
                         <td>{{$rm->qty}}</td>
                        <td>
                            <input type="hidden" name="rm[]" value="{{ $rm->rm_code }}">
                             {!! Form::text('additional[]' ,null, ['class' => 'form-control']) !!}
                        </td>
-                        <td>{{$rm->UOM}}</td>
+                        <td>{{$rm->uom}}</td>
                         <td>{{$rm->rate}}</td>
                         <td>{{$rm->amount}}</td>
                         <td>   <a href="/production/batch/{{$batch->id}}/del_rm/{{$rm->rm_code}}" class="btn btn-danger" >Delete Additional</a> </td>

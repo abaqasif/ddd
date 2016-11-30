@@ -26,7 +26,7 @@ class WastageController extends Controller
 
         $wastes = \DB::table('raw_materials')
             ->join('wastages' , 'raw_materials.rm_code', '=', 'wastages.rm_code')
-            ->select('wastages.*' ,'raw_materials.rate', 'raw_materials.desc')
+            ->select('wastages.*' ,'raw_materials.rate', 'raw_materials.type')
             ->get()->toArray();
         return view('Wastage.home' , compact('wastes'));
     }

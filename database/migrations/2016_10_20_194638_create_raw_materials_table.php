@@ -14,18 +14,17 @@ class CreateRawMaterialsTable extends Migration
     public function up()
     {
         Schema::create('raw_materials', function (Blueprint $table) {
+            
             $table->increments('id');
+            $table->string('name');
             $table->string('rm_code')->unique();
-            $table->string('desc');
-            $table->string('UOM');
-            $table->integer('supplier_id')->unsigned();
-            $table->integer('rate');
-            $table->integer('re_order');
-            $table->integer('open_balance');
-            $table->boolean('empty')->default(false);
-            $table->boolean('running')->default(false);
-            $table->boolean('active')->default(false);
-            $table->timestamps();
+            $table->string('type')->nullable;
+            $table->string('uom');
+            $table->integer('op_inv')->nullable();
+            $table->integer('pack_size')->nullable();
+            $table->integer('qty_available')->nullable();
+            $table->integer('supp_id');
+            $table->foreign('supp_id')->references('id')->on('suppliers') ;
 
         });
     }
@@ -37,6 +36,6 @@ class CreateRawMaterialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('raw__materials');
+        Schema::dropIfExists('raw_materials');
     }
 }

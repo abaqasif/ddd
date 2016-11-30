@@ -17,7 +17,7 @@
             <table class="table table-condensed" style="width:90%">
                 <tr>
                     <th>SERIAL NO</th>
-                    <th>DESCRIPTION</th>
+                    <th>TYPE</th>
                     <th>QUANTITY</th>
                     <th>UNIT</th>
                     <th>RATE</th>
@@ -31,9 +31,9 @@
                     <tr>
 
                         <td>{{$rm->rm_id}}</td>
-                        <td>{{$rm->desc}}</td>
+                        <td>{{$rm->type}}</td>
                         <td>{{$rm->qty}}</td>
-                        <td>{{$rm->UOM}}</td>
+                        <td>{{$rm->uom}}</td>
                         <td>{{$rm->rate}}</td>
 
 

@@ -39,7 +39,7 @@
         <table class="table table-condensed" style="width:90%">
             <tr>
                 <th>SERIAL NO</th>
-                <th>DESCRIPTION</th>
+                <th>TYPE</th>
                 <th>QUANTITY</th>
                 <th>ADDITIONAL</th>
                 <th>UNIT</th>
@@ -53,10 +53,10 @@
             @foreach($rms as $rm)
                 <tr>
                     <td>{{$rm->rm_code}}</td>
-                    <td>{{$rm->desc}}</td>
+                    <td>{{$rm->type}}</td>
                     <td>{{$rm->qty*$batch->batch_size}}</td>
                     <td>{{$rm->additional}}</td>
-                    <td>{{$rm->UOM}}</td>
+                    <td>{{$rm->uom}}</td>
                     <td>{{$rm->rate}}</td>
                     <td>{{$rm->rate*$rm->qty*$batch->batch_size}}</td>
                     <td>   <a href="/production/batch/{{$batch->id}}/update_add/{{$rm->rm_code}}" class="btn btn-primary" >Update Additional Quantity</a> </td>

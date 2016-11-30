@@ -38,7 +38,7 @@
         <table class="table table-condensed" style="width:90%">
             <tr>
                 <th>RM_CODE</th>
-                <th>DESC</th>
+                <th>TYPE</th>
                 <th>RATE</th>
 
             </tr>
@@ -47,7 +47,7 @@
                 <tr>
 
                     <td>{{$rm->rm_code}} </td>
-                    <td>{{$rm->desc}}</td>
+                    <td>{{$rm->type}}</td>
                     <td>{{$rm->rate}}</td>
 
                 </tr>
