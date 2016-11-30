@@ -3,8 +3,11 @@
 @section('content')
     <div class="container">
         <h1>Add filling </h1>
-        <h4>Total Weight of batch = {{$batch->gross_wieght - $batch->empty_weight}}</h4>
-        <h4>Batch left to fill: </h4>
+
+
+        <h4>Total weight of batch : {{$batch->gross_weight  - $batch->empty_weight}}</h4>
+        <h4>Total weight of fillings : {{$total_fill}}</h4>
+        <h4>Batch left for filling: {{$batch->gross_weight  - $total_fill  - $batch->empty_weight}}</h4>
         <p class="lead"></p>
         <hr>
 

@@ -11,6 +11,7 @@
         <br>
         <table class="table table-condensed" style="width:90%">
             <tr>
+                <th>Batch ID</th>
                 <th>Batch Num</th>
                 <th>Batch Date</th>
                 <th>Recipe ID</th>

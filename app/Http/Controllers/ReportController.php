@@ -82,8 +82,15 @@ return view('Reports.mp_home');
 //                'rm_code')
 //            ->get();
 
+
+         $sum_add = \DB::table('batch_details')->where('batch_id', '=', $batch[0]->id)
+            ->sum('additional');
+         $sum_qty = \DB::table('batch_details')->where('batch_id', '=', $batch[0]->id)
+             ->sum('qty');
+         $total_qty  = $sum_add + $sum_qty;
+
 $bds = \DB::select("select id,rm_code,additional,qty, additional+qty AS total,
-                    additional+qty*100/sum(additional+qty) AS percentage 
+                    additional+qty*100/$total_qty AS percentage 
                     from batch_details
                     where batch_id = ? 
                     group by id,rm_code,additional,qty,total"
@@ -112,6 +119,27 @@ $tests =  \DB::table('batch_test')
 
 
     public function get_mixing_cost(Request $request){
+        $batch = \DB::table('batches')->where('num' , '=' , $request->batch_num)->select('id')->get();
+ 
+         $sum_add = \DB::table('batch_details')->where('batch_id', '=', $batch[0]->id)
+             ->sum('additional');
+         $sum_qty = \DB::table('batch_details')->where('batch_id', '=', $batch[0]->id)
+             ->sum('qty');
+         $total_qty  = $sum_add + $sum_qty;
+ 
+ 
+         $bds = \DB::select("select id,rm_code,additional,qty, additional+qty AS total
+                     from batch_details b inner join raw_materials r
+                     on b.rm_code = r.rm_code
+                     where batch_id = ? "
+             , [$batch[0]->id]);
+ 
+           echo $bds;
+ 
+ 
+ 
+ 
+      }
 
-    }
+    
 }

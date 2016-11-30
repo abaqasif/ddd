@@ -37,12 +37,9 @@
 
 
                         <td><a href="/production/recipe/{{$recipe->id}}/rm_list" class="btn btn-info">Show Raw Materials</a>
-                        <td><a href="/production/recipe/{{$recipe->id}}/edit" class="btn btn-info">Update Recipe</a>
+                       
 
-
-
-                        {{--<td><a href="/user/{{$user->id}}/edit" class="btn btn-info">update</a>--}}
-
+                       <td><a href="{{url('/production/recipe/'.$recipe->id.'/update')}}" class="btn btn-info">Update Recipe</a>
 
                         <td>
                             {!! Form::open(['method' => 'DELETE','route' => ['recipe.destroy', $recipe->id],'style'=>'display:inline']) !!}

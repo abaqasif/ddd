@@ -62,7 +62,7 @@
                         &nbsp;<li><a href="{{ url('user/') }}">USER</a></li>
                         &nbsp;<li><a href="{{ url('page/') }}">PAGE</a></li>
                             <li><a href="{{ url('access/') }}">Access Rights</a></li>
-                            <li><a href="{{ url('production/home') }}">Production</a></li>
+                            <li><a href="{{ url('production/') }}">Production</a></li>
 
                         @endif
                         {{--@if(Auth::user())--}}

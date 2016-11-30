@@ -84,14 +84,11 @@ Route::post('/production/item/rtrv', 'ItemController@rtrv_item');
 //Inventory
 Route::get('/inventory' , 'InventoryController@control_screen');
 
-
-Route::get('/production/recipe/update', 'RecipeController@UpdateHome');
+//Recipe
+Route::get('/production/recipe/{recipe}/update', 'RecipeController@update_home');
 Route::get('/production/recipe/{recipe}/rm_list', 'RecipeController@rm_list');
-Route::get('/production/recipe/delete', 'RecipeController@');
 
 
-
-//Route::get('/production/recipe/{recipe}/rm/add', 'RMcontroller@add');
 Route::post('/production/recipe/{recipe}/update_done', 'RecipeController@update_recipe_done');
 Route::get('/production/recipe/{recipe}/{raw_material_id}/delete', 'RecipeController@delete_rm');
 Route::get('/production/recipe/{recipe}/add_rm', 'RMController@add_rm');

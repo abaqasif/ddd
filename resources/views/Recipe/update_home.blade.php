@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h1>All Recipes</h1>
+        <h1>Update Recipe</h1>
         <p class="lead">Here's a list of all your Recipes:</p>
 
         <div class = "container">
@@ -21,7 +21,7 @@
                     <th></th>
                     <th></th>
                 </tr>
-                @foreach($recipes as $recipe)
+           
                     <tr>
 
                         <td>{{$recipe->id}}</td>
@@ -44,7 +44,7 @@
 
 
                     </tr>
-            @endforeach
+          
         </div>
         <hr>
 
